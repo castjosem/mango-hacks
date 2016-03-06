@@ -10,6 +10,19 @@ module.exports.services = {
 	}
 };
 
+module.exports.api = {
+	"twitter": {
+		consumer_key:      		'DxkdxFI6WVoaKxuBqdFMGjDpc',
+		consumer_secret: 		'oGfMG4G86uPUi95L4lrD4wTm4BMOlEBlWgnYmTIzzHpCHGSSOz',
+		access_token: 			'706125674168373248-fEqAJ1qsyyqqwMXT6aAiPvbtyo8ErKP',
+		access_token_secret: 	'qrS31WBRk7xuU43jGdA7Y0fNVJMpA9o7wSgYGKfOwFLYA',
+		owner: 					'jcast450',
+		owner_id: 				'706125674168373248',
+		count: 					40
+	}
+};
+
+
 
 module.exports.mongodb = 'mongodb://198.199.69.47/moodsical';
 

@@ -9,8 +9,9 @@ from bs4 import BeautifulSoup
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
-serverUrl = 'http://127.0.0.1:3000'
+#serverUrl = 'http://127.0.0.1:3000'
 
+serverUrl = 'http://45.55.105.121:3000'
 
 class LyricsAPI(object):
 	def __init__(self):
