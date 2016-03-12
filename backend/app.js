@@ -1,5 +1,6 @@
 var express 		= require('express');
 var mongoose 		= require('mongoose');
+var fs 				= require('fs');
 var path 			= require('path');
 var favicon 		= require('serve-favicon');
 var logger 			= require('morgan');
@@ -8,11 +9,12 @@ var bodyParser 		= require('body-parser');
 var config        	= require('./config/config');
 var config        	= require('./config/config');
 var playlist 		= require('./routes/playlist');
+var model_playlist = require('./models/playlist');
 var routes 			= require('./routes/index');
 
-var app 			= express();
+var classifier 		= require('./modules/classifier');
 
-require('./models/playlist');
+var app 			= express();
 
 var connect = function () {
 	console.log('connect-to-mongodb');
@@ -41,8 +43,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', routes);
 app.use('/', playlist);
+
+classifier.load_training();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

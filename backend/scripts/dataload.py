@@ -116,5 +116,4 @@ class Playlist(object):
 if __name__ == "__main__":
 	playlist = Playlist()
 	playlist.updateTracks()
-
 	print ("End data loader")

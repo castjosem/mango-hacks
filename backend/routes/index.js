@@ -40,6 +40,8 @@ router.post('/api/search', function(request, response, next){
 			var emotion = request.body.emotion;
 			var text = request.body.text;
 
+			console.log(tweets.join(" "));
+
 			var payload = {
 				text: unescape(tweets.join(" "))
 			};
