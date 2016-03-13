@@ -36,6 +36,7 @@
     "passport-twitter": "^1.0.4",
     "request": "^2.69.0",
     "serve-favicon": "~2.3.0",
+    "slashes": "^1.0.5",
     "socket.io": "^1.4.5",
     "twit": "^2.2.3",
     "twitter": "^0.2.13",

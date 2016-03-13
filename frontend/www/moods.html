@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moodsical</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+function btntest_onclick() 
+{
+    window.location.href = "emoji.html";
+}
+  $(document).ready(function(){
+    $("h2").hide(0).delay(500).fadeIn(1500)
+});
+
+</script>
+
+  </head>
+  <body>
+
+    
+  <img src="/img/logo.png" />
+  <hr>
+  <h2>Twitter Login</h2>
+<div class="list list-inset">
+  <label class="item item-input">
+
+    <input type="text" placeholder="Username">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="Password">
+  </label>
+</div>
+<i class= icon icon-search /><input id="btntest" type="button" button class="button button-large button-calm" value="Click Here " 
+       onclick="return btntest_onclick()" />
+
+
+  <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+      <a class="tab-item" href="index.html">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item active" href="moods.html">
+        <i class="icon ion-ios-pulse-strong"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="results.html">
+        <i class="icon ion-music-note"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+  </body>
+</html>

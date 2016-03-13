@@ -8,7 +8,6 @@ var cookieParser 	= require('cookie-parser');
 var bodyParser 		= require('body-parser');
 var config        	= require('./config/config');
 var config        	= require('./config/config');
-var playlist 		= require('./routes/playlist');
 var model_playlist = require('./models/playlist');
 var routes 			= require('./routes/index');
 
@@ -45,7 +44,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
-app.use('/', playlist);
 
 classifier.load_training();
 

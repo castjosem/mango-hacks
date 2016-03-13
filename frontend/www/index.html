@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moodsical</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script language="javascript" type="text/javascript">
+function btntest_onclick() 
+{
+    window.location.href = "emoji.html";
+}
+ var aImages  =  [ "img/joy.png", "img/disgust.png","img/love.png", "img/sadness.png" ];
+      var oImage   =  null;
+      var iIdx     =  0;
+      function play(){
+        try{
+          //look only once in DOM and cache it
+          if(oImage===null){
+            oImage  =  window.document.getElementById("emoji");
+          }
+          oImage.src  =  aImages[(++iIdx)%(aImages.length)];
+          setTimeout('play()',1000);
+        } catch(oEx){
+          //some error handling here
+        }
+      }    
+
+    $(document).ready(function(){
+    $("#btntest").hide(0).delay(500).fadeIn(2000)
+});
+       $(document).ready(function(){
+    $("h1, h4").hide(0).delay(500).fadeIn(3500)
+});
+       </script>
+</head>
+
+  <body onload="play()">
+
+    
+   <img src="img/logo.png" />
+   <hr>
+   <a href="easteregg.html"><img id="emoji" src="img/joy.png"/></a>
+   <h1> Feeling Moody? </h1>
+   <h4>Find the groove that fits your mood</h4>
+
+ <br>
+   
+  
+ <input id="btntest" type="button" button class="button button-calm" value="Find Your Groove" 
+       onclick="return btntest_onclick()" />
+
+
+
+  <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+      <a class="tab-item active" href="index.html">
+        <i class="icon ion-home"></i>
+      </a>
+      <a class="tab-item" href="emoji.html">
+        <i class="icon ion-ios-pulse-strong"></i>
+      </a>
+      <a class="tab-item" href="results.html">
+        <i class="icon ion-music-note"></i>
+      </a>
+    </div>
+  </div>
+  </body>
+</html>

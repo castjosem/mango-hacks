@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moodsical</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="cordova.js"></script>
+      <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+  
+       $(document).ready(function(){
+    $("h1, hr").hide(0).delay(500).fadeIn(3500)
+});
+    </script>
+  </head>
+  <body>
+    
+  <img src="/img/logo.png" /> 
+  <hr>
+  <h1>Results:</h1>
+  <hr>
+ <iframe src="https://embed.spotify.com/?uri=spotify:user:spotify_germany:playlist:6zQkNlFnpNO5BB0MG9c165&view=coverart" width="220" height="320" frameborder="0" allowtransparency="true"></iframe>
+  <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+       <a class="tab-item" href="index.html">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item" href="emoji.html">
+        <i class="icon ion-ios-pulse-strong"></i>
+        Favorites
+      </a>
+      <a class="tab-item active" href="results.html">
+        <i class="icon ion-music-note"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+  </body>
+</html>

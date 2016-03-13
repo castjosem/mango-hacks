@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moodsical</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+
+slideTimer = setInterval(function() {
+    $('.list').slideUp();
+}, 250);
+slideTimer = setInterval(function() {
+    $('.video').slideDown();
+}, 200)
+    </script>
+  </head>
+  <body>
+
+    
+  <img src="/img/logo.png" />
+  <hr>
+<div class="list">
+  <label class="item item-input">
+    <span class="input-label">Username</span>
+    <input type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password">
+  </label>
+</div> <div class="video">
+<h1>Bruh</h1>
+<div class="video">
+<iframe width="360" height="215" src="https://www.youtube.com/embed/NzishIREebw?autoplay=1" frameborder="0" allowfullscreen></iframe>
+</div>
+<br>
+<p><b>Seriously why did you click on the picture. We CLEARLY have a button for a reason. Come on Man!</b></p>
+  <div class="tabs-striped tabs-color-positive">
+    <div class="tabs">
+      <a class="tab-item" href="index.html">
+        <i class="icon ion-home"></i>
+        Test
+      </a>
+      <a class="tab-item active" href="moods.html">
+        <i class="icon ion-ios-pulse-strong"></i>
+        Favorites
+      </a>
+      <a class="tab-item" href="results.html">
+        <i class="icon ion-music-note"></i>
+        Settings
+      </a>
+    </div>
+  </div>
+  </body>
+</html>
