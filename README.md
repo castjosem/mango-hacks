@@ -35,3 +35,6 @@
 
 ## What's next for Moodsical
 
+
+Spotify Playlist Miner
+http://static.echonest.com/playlistminer/index.html

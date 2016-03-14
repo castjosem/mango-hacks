@@ -119,7 +119,10 @@ router.post('/api/emotion/load', function(request, response, next){
 				response.json({ error: err });
 			else {
 				response.json({			
-					output: classifier.learn(lyrics, emotion)
+					output: classifier.learn(lyrics, emotion),
+					song: name,
+					artist: artist,
+					emotion: emotion
 				});
 			}			
 		});
@@ -144,25 +147,51 @@ router.post('/api/emotion/track', function(request, response, next){
 
 
 
-
-
-
-
 router.post('/api/playlist', function(request, response, next){
-	var id = request.body.id;
-	var playlist = new Playlist({ _id: id});
-	playlist.name 			= request.body.name;
-	playlist.user_id 		= request.body.user_id;
-	playlist.personality 	= request.body.personality;
-	playlist.emotion 		= request.body.emotion;
-	playlist.image 			= request.body.image;
+	if (typeof request.body.id !== 'undefined' && 
+		typeof request.body.name !== 'undefined' &&
+		typeof request.body.user_id !== 'undefined' &&
+		typeof request.body.personality !== 'undefined' &&
+		typeof request.body.emotion !== 'undefined' &&
+		typeof request.body.image !== 'undefined'){
 
-	playlist.save(function(err){
-		if(err)
-			response.send(err);
-		response.json("Playlist created!");
-	});
+		var id 			= request.body.id;
+		var name 		= request.body.name;
+		var user_id 	= request.body.user_id;
+		var personality = request.body.personality;
+		var emotion 	= request.body.emotion;
+		var image 		= request.body.image;
+
+		var playlist = new Playlist({ _id: id});		
+		playlist.name 			= name;
+		playlist.user_id 		= user_id;
+		playlist.personality 	= personality;
+		playlist.emotion 		= emotion;
+		playlist.image 			= image;
+
+
+		Playlist.count({_id: id}, function (err, count) {
+			if (!count) {
+				playlist.save(function(err){
+					if(err)
+						response.json({ error: err });
+					else {
+						response.json({			
+							output: "Playlist created!",
+							personality: personality,
+							name: name,
+							emotion: emotion
+						});
+					}			
+				});
+			}
+			else response.json({ output: "Playlist alreadt exists"});
+		});
+	}
+	else response.json("Invalid request");
 });
+
+
 
 router.post('/api/track', function(request, response, next){
 	var track = new Track();
