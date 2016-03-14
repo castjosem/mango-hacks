@@ -65,3 +65,8 @@ Make people happier! :)
 
 ## Important links
 Spotify Playlist Miner  http://static.echonest.com/playlistminer/index.html
+
+
+![Mongoose GUI](https://raw.githubusercontent.com/castjosem/moodsical/master/mongoose.PNG)
+
+![Mongoose GUI](https://raw.githubusercontent.com/castjosem/moodsical/master/data_loading.PNG)
