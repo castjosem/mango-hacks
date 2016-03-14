@@ -30,10 +30,10 @@ router.get('/', function(req, res, next) {
 
 
 
-router.post('/api/playlist/search', function(request, response, next){
-	if (typeof request.body.username !== 'undefined' && typeof request.body.emotion !== 'undefined'){
-		var username = request.body.username;
-		var emotion = request.body.emotion;
+router.get('/api/playlist/search', function(request, response){
+	if (typeof request.query.username !== 'undefined' && typeof request.query.emotion !== 'undefined'){
+		var username = request.query.username;
+		var emotion = request.query.emotion;
 		
 		var options = { screen_name: username,  count: twitter_config.count };
 		var tweets = [];

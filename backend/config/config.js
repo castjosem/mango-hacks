@@ -28,4 +28,4 @@ module.exports.mongodb = 'mongodb://198.199.69.47/moodsical';
 
 
 
-module.exports.pi_threshold = 0.6;
+module.exports.pi_threshold = 0.3;

@@ -135,7 +135,7 @@ class SpotifyAPI(object):
 		self.sp = spotipy.Spotify(auth=token)
 
 	def featured_playlists(self):
-		return self.sp.featured_playlists(limit=100)
+		return self.sp.featured_playlists(limit=50)
 
 	def track_info(self, user_id, playlist_id):
 		return self.sp.user_playlist_tracks(user_id, playlist_id=playlist_id, fields="items(track(name, artists(name), album(name)))", limit=25, offset=0)
