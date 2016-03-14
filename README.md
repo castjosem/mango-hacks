@@ -51,6 +51,7 @@ Important Endpoints:
 ## Challenges we ran into
 Watson Tone Analyzer permits to identify emotions from Text. Although for music is not a good classifier. A lot of time was spent looking for ways to identify an appropiate solution to get the emotions.
 In order to get songs lyrics, there are no API that gives access to the complete lyric. In this light, we had to use Musicxmatch API to search for the url of the web version of the lyric and use Web Scrapping tools to obtain it.
+We had to go with Twitter due to Facebook taking 5 days to approve the app submission that gives access to user's post.
 
 ## Accomplishments that we're proud of
 We are able to give a reasonable classification for song emotions to identify the playlist we are looking for!
