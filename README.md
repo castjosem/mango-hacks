@@ -30,16 +30,17 @@ But!, moodsical will ask you for your current mood and with this will suggest yo
 Moodsical uses Watson's Tone Analyzer to learn from your latest tweets and create a vector that represents you based on: Openess, Conscientiousness
 , Extraversion, Agreeableness, Emotional Range
 
-Using a Naive Bayes Classifier we are able to categorize song emotions based on its lyrics. We created our training data using Spotify's Data Miner tool to roughly gather 100 songs per emotion (happy, sad, angry, relaxing, excited). With this our API can classify any song's lyric and give back its emotion.
+Using a <strong>Naive Bayes Classifier</strong> we are able to categorize song emotions based on its lyrics. We created our training data using Spotify's Data Miner tool to roughly gather 100 songs per emotion (happy, sad, angry, relaxing, excited). With this our API can classify any song's lyric and give back its emotion.
 
 By having this classifier we are able to as well categorize the main emotion of a playlist and create a "personality" for it that it's matched with you thorugh a mathematical formula.
 
 To load data into the classifier we built python scripts that read from our training data and loads it into a MongoDB database and searches for featured playlists from Spotify to increase our dataset.
 
-Currently running on a DigitalOcean server:  45.55.105.121:3000
+Currently running on a DigitalOcean server:  <strong> 45.55.105.121:3000 </strong>
 Emotions:  Happy, Sad, Angry, Relaxing, Excited
 
 Important Endpoints:
+
 	GET /api/playlist/search?emotion=Happy&username=Pharrell     Get playlists 
 
 	POST /api/personality/analyze    text = ?		Analyze text and calculate its "personality"
