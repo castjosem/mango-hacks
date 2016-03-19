@@ -40,13 +40,13 @@ class WebSrapping(object):
 	def getPage(self, url):
 		self.session = requests.Session()
 		self.adapters = requests.adapters.HTTPAdapter(max_retries=10)
-		return self.session.get(url, headers=self.headers, timeout=5)
+		return self.session.get(url, headers=self.headers, timeout=10)
 
 	def getLyrics(self, lyrics_url):
 		page = self.getPage(lyrics_url)
 		data = page.text
 		soup = BeautifulSoup(data, "html.parser")
-		lyrics = soup.find("div", {"class":"body",  "id": "selectable-lyrics"})
+		lyrics = soup.find("p", {"class":"mxm-lyrics__content"})
 		if lyrics:
 			return lyrics.text
 		return None
@@ -222,7 +222,9 @@ class Playlist(object):
 						total_lyrics.append(lyrics)
 					else:
 						print ("Lyrics not found: %s,    %s,     %s" % (song, artist, album))
-
+				except ReadTimeoutError as err:
+					print ("Error: %s,    %s,    %s,    %s" % (song, artist, album, err))
+					
 				except TypeError as err:
 					print ("Error: %s,    %s,    %s,    %s" % (song, artist, album, err))
 
